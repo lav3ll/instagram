@@ -1,0 +1,14 @@
+{
+  "name": "instagram",
+  "version": "1.0.0",
+  "description": "Instagram clone",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lavell Francis",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
