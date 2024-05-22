@@ -1,16 +1,25 @@
 const express = require('express');
-
-const mysql = require('mysql');
 const cors = require('cors');
+const mysql = require('mysql2/promise');
+const config = require('./config');
+const db = require('./config/database');
 
 const app = express();
 app.use(cors());
 
-config = require('./config');
+app.use(express.json());
 
-const db = require('./config/database');
+app.get('/some-endpoint', async (req, res) => {
+  try {
+    const connection = await db;
+    const [rows] = await connection.query('SELECT * FROM some_table');
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
 
-app.listen(
-  config.port,
-  console.log('Server has started on port http://localhost:%s', config.port)
+app.listen(config.port, () =>
+  console.log('Server has started on http://localhost:%s', config.port)
 );
