@@ -3,7 +3,13 @@ import AuthForm from './AuthForm/AuthForm';
 
 const AuthPage = () => {
   return (
-    <Flex minH={'100vh'} justifyContent={'center'} alignItems={'center'} px={4}>
+    <Flex
+      minH={'100vh'}
+      justifyContent={'center'}
+      alignItems={'center'}
+      px={4}
+      data-testid={'auth-form'}
+    >
       <Container maxW={'container.md'} padding={0}>
         <Flex justifyContent={'center'} alignItems={'center'} gap={10}>
           <Box display={{ base: 'none', md: 'block' }}>
@@ -14,8 +20,8 @@ const AuthPage = () => {
             <AuthForm />
             <Box textAlign={'center'}>Get the app.</Box>
             <Flex gap={5} justifyContent={'center'}>
-              <Image src='/playstore.png' h={10} alt={'playsore logo'} />
-              <Image src='/microsoft.png' h={10} alt={'playsore logo'} />
+              <Image src='/playstore.png' h={10} alt={'playstore logo'} />
+              <Image src='/microsoft.png' h={10} alt={'playstore logo'} />
             </Flex>
           </VStack>
         </Flex>
