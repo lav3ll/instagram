@@ -1,34 +1,82 @@
-import { Flex, Container, VStack, Box, Image } from '@chakra-ui/react';
-import AuthForm from './AuthForm/AuthForm';
+import { React, useState } from 'react';
+import {
+  Box,
+  VStack,
+  Image,
+  Input,
+  Button,
+  Flex,
+  Text,
+} from '@chakra-ui/react';
 
-const AuthPage = () => {
+const AuthForm = () => {
+  const [isLogin, setIsLogin] = useState(true);
   return (
-    <Flex minH={'100vh'} justifyContent={'center'} alignItems={'center'} px={4}>
-      <Container maxW={'container.md'} padding={0}>
-        <Flex justifyContent={'center'} alignItems={'center'} gap={10}>
-          <Box
-            display={{ base: 'none', md: 'block' }}
-            data-testid='responsive-box'
+    <>
+      <Box border={'1px solid'} borderRadius={'4'} padding={5} datatype>
+        <VStack spacing={4}>
+          <Image src='/logo.png' h={24} cursor='pointer' alt='instagram' />
+          <Input placeholder='Email' onChange={''} fontSize={14} type='email' />
+          <Input
+            placeholder='Password'
+            onChange={''}
+            fontSize={14}
+            type='password'
+          />
+          {!isLogin ? (
+            <Input
+              placeholder='Confirm Password'
+              fontSize={14}
+              type='password'
+            />
+          ) : null}
+          <Button w={'full'} colorScheme={'blue'} size={'sm'} fontSize={14}>
+            {isLogin ? 'login' : 'Sign Up'}
+
+            {/* Or text */}
+          </Button>
+          <Flex
+            alignItems={'center'}
+            justifyContent={'center'}
+            my={4}
+            gap={1}
+            w={'full'}
           >
-            {' '}
-            // Added data-testid
-            {/* Left side */}
-            <Image src='/auth.png' h={650} alt='Phone image' />
+            <Box flex={2} h={'1px'} bg={'gray.400'} />
+            <Text mx={1} color={'white'}>
+              OR
+            </Text>
+            <Box flex={2} h={'1px'} bg={'gray.400'} />
+          </Flex>
+
+          <Flex
+            alignItems={'center'}
+            justifyContent={'center'}
+            cursor={'pointer'}
+          >
+            <Image src='/google.png' w={5} alt='google logo' />
+            <Text mx={2} color={'white'}>
+              Log in with google
+            </Text>
+          </Flex>
+        </VStack>
+      </Box>
+      <Box border={'1px solid gray'} borderRadius={4}>
+        <Flex alignItems={'center'} justifyContent={'center'}>
+          <Box mx={2} fontSize={14}>
+            {isLogin ? "Don't have an account" : 'Already have an account?'}
           </Box>
-          <VStack spacing={4} align={'stretch'}>
-            <AuthForm />
-            <Box textAlign={'center'}>Get the app.</Box>
-            <Flex gap={5} justifyContent={'center'}>
-              <Image src='/playstore.png' h={10} alt={'playstore logo'} />
-              <Image src='/microsoft.png' h={10} alt={'microsoft logo'} /> //
-              Corrected the alt text
-            </Flex>
-          </VStack>
+          <Box
+            onClick={() => setIsLogin(!isLogin)}
+            color={'blue.500'}
+            cursor={'pointer'}
+          >
+            {isLogin ? 'Sign Up' : 'Log in'}
+          </Box>
         </Flex>
-        {/* Right side */}
-      </Container>
-    </Flex>
+      </Box>
+    </>
   );
 };
 
-export default AuthPage;
+export default AuthForm;
