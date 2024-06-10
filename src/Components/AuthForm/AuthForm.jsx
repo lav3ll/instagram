@@ -11,26 +11,55 @@ import {
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const [inputs, setInputs] = useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const handleAuth = () => {
+    console.log('inputs', inputs);
+  };
   return (
     <>
       <Box border={'1px solid'} borderRadius={'4'} padding={5} datatype>
         <VStack spacing={4}>
           <Image src='/logo.png' h={24} cursor='pointer' alt='instagram' />
-          <Input placeholder='Email' onChange={''} fontSize={14} type='email' />
+          <Input
+            placeholder='Email'
+            fontSize={14}
+            type='email'
+            value={inputs.email}
+            // When login button is clicked only update the state of the email property
+            onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
+          />
           <Input
             placeholder='Password'
-            onChange={''}
+            // When login button is clicked only update the state of the password property
+            onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
             fontSize={14}
             type='password'
+            value={inputs.password}
           />
           {!isLogin ? (
             <Input
               placeholder='Confirm Password'
               fontSize={14}
               type='password'
+              value={inputs.confirmPassword}
+              // When login button is clicked only update the state of the confirm password property
+              onChange={(e) =>
+                setInputs({ ...inputs, confirmPassword: e.target.value })
+              }
             />
           ) : null}
-          <Button w={'full'} colorScheme={'blue'} size={'sm'} fontSize={14}>
+          <Button
+            w={'full'}
+            colorScheme={'blue'}
+            size={'sm'}
+            fontSize={14}
+            onClick={handleAuth}
+          >
             {isLogin ? 'login' : 'Sign Up'}
 
             {/* Or text */}
