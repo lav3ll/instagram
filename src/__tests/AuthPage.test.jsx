@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import AuthPage from '../Components/AuthPage';
 
 jest.mock('../Components/AuthForm/AuthForm', () => () => (
-  <div data-testid='auth-form'>AuthForm</div>
+  <div data-testid='auth-page'>AuthForm</div>
 ));
 
 // Utility function to check if an element is visible
@@ -20,7 +20,7 @@ describe('AuthPage Component', () => {
 
   test('renders AuthForm component', () => {
     render(<AuthPage />);
-    const authForm = screen.getByTestId('auth-form');
+    const authForm = screen.getByTestId('auth-page');
     expect(authForm).toBeInTheDocument();
   });
 

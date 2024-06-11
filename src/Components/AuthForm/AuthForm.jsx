@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   VStack,
@@ -9,8 +9,11 @@ import {
   Text,
 } from '@chakra-ui/react';
 
+import { useNavigate } from 'react-router-dom';
+
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     email: '',
     password: '',
@@ -18,10 +21,15 @@ const AuthForm = () => {
   });
 
   const handleAuth = () => {
-    console.log('inputs', inputs);
+    if (!inputs.email || !inputs.password) {
+      alert('You have not filled out all of the fields!');
+      return;
+    }
+
+    navigate('/');
   };
   return (
-    <>
+    <div data-testid='auth-form'>
       <Box border={'1px solid'} borderRadius={'4'} padding={5} datatype>
         <VStack spacing={4}>
           <Image src='/logo.png' h={24} cursor='pointer' alt='instagram' />
@@ -30,39 +38,26 @@ const AuthForm = () => {
             fontSize={14}
             type='email'
             value={inputs.email}
-            // When login button is clicked only update the state of the email property
             onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
+            data-testid='auth-form-email'
           />
           <Input
             placeholder='Password'
-            // When login button is clicked only update the state of the password property
             onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
             fontSize={14}
             type='password'
             value={inputs.password}
+            data-testid='auth-form-password'
           />
-          {!isLogin ? (
-            <Input
-              placeholder='Confirm Password'
-              fontSize={14}
-              type='password'
-              value={inputs.confirmPassword}
-              // When login button is clicked only update the state of the confirm password property
-              onChange={(e) =>
-                setInputs({ ...inputs, confirmPassword: e.target.value })
-              }
-            />
-          ) : null}
           <Button
             w={'full'}
             colorScheme={'blue'}
             size={'sm'}
             fontSize={14}
             onClick={handleAuth}
+            data-testid='auth-form-btn'
           >
             {isLogin ? 'login' : 'Sign Up'}
-
-            {/* Or text */}
           </Button>
           <Flex
             alignItems={'center'}
@@ -104,7 +99,7 @@ const AuthForm = () => {
           </Box>
         </Flex>
       </Box>
-    </>
+    </div>
   );
 };
 
