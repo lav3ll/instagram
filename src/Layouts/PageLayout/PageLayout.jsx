@@ -7,9 +7,12 @@ const PageLayout = ({ children }) => {
   return (
     <Flex>
       {/* sidebar on the left */}
-      <Box w={{ base: '70px', md: '240px' }}>
-        <Sidebar />
-      </Box>
+      // if there path is not equal to auth, render sidebar
+      {pathname !== '/auth' ? (
+        <Box w={{ base: '70px', md: '240px' }}>
+          <Sidebar />
+        </Box>
+      ) : null}
       {/* right side content */}
       <Box>{children}</Box>
     </Flex>
