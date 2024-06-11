@@ -1,9 +1,19 @@
 import React from 'react';
-
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AuthForm from '../Components/AuthForm/AuthForm';
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: jest.fn(),
+}));
+
+const mockNavigate = jest.fn();
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => mockNavigate,
+}));
 
 describe('AuthForm Component renders without crashing', () => {
   test('renders without crashing', () => {
@@ -46,5 +56,26 @@ describe('AuthForm Component renders without crashing', () => {
     expect(window.alert).toHaveBeenCalledWith(
       'You have not filled out all of the fields!'
     );
+  });
+
+  test('Logs the user in when correct information is entered', () => {
+    const { getByTestId } = render(
+      <Router>
+        <AuthForm />
+      </Router>
+    );
+
+    const emailInput = getByTestId('auth-form-email');
+    const passwordInput = getByTestId('auth-form-password');
+
+    fireEvent.change(emailInput, { target: { value: 'john@1234.com' } });
+    fireEvent.change(passwordInput, { target: { value: 'password123' } });
+
+    // Click the login button
+    const submitButton = getByTestId('auth-form-btn');
+    fireEvent.click(submitButton);
+
+    // Assert that the navigate function is called with the correct route
+    expect(mockNavigate).toHaveBeenCalledWith('/');
   });
 });
