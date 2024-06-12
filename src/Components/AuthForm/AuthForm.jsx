@@ -30,7 +30,7 @@ const AuthForm = () => {
   };
   return (
     <div data-testid='auth-form'>
-      <Box border={'1px solid'} borderRadius={'4'} padding={5} datatype>
+      <Box border={'1px solid'} borderRadius={'4'} padding={5}>
         <VStack spacing={4}>
           <Image src='/logo.png' h={24} cursor='pointer' alt='instagram' />
           <Input
