@@ -1,4 +1,5 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 import React from 'react';
 
 const Sidebar = () => {
@@ -14,8 +15,21 @@ const Sidebar = () => {
       px={{ base: 2, md: 4 }}
     >
       Sidebar
+      <Flex direction={'column'} gap={10} w={'full'} height={'full'}>
+        <Link
+          to={'/'}
+          as={RouterLink}
+          pl={2}
+          display={{ base: 'none', md: 'block' }}
+          cursor={'pointer'}
+        >
+          <InstagramLogo />
+        </Link>
+      </Flex>
     </Box>
   );
+
+  sdd;
 };
 
 export default Sidebar;
