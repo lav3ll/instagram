@@ -1,7 +1,7 @@
-import { Avatar, Box, Flex, Link } from '@chakra-ui/react';
+import { Avatar, Box, Flex, Link, Tooltip } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import React from 'react';
-import AiFillHome from 'react-icons/ai';
+import { AiFillHome } from 'react-icons/ai';
 import {
   CreatePostLogo,
   InstagramLogo,
@@ -19,7 +19,7 @@ const Sidebar = () => {
     },
     {
       icon: <SearchLogo />,
-      text: 'search',
+      text: 'Search',
     },
     {
       icon: <NotificationsLogo />,
@@ -68,6 +68,34 @@ const Sidebar = () => {
         >
           <InstagramMobileLogo />
         </Link>
+        <Flex direction={'column'} gap={5} cursor={'pointer'}>
+          {sidebarItems.map((item, idx) => (
+            <Tooltip
+              hasArrow
+              label={'item.text'}
+              placement={'right'}
+              key={idx}
+              ml={1}
+              openDelay={500}
+              display={{ base: 'block', md: 'none' }}
+            >
+              <Link
+                display={'flex'}
+                to={item.link || null}
+                as={RouterLink}
+                alignItems={'center'}
+                gap={4}
+                _hover={{ bg: 'whiteAplha.400' }}
+                borderRadius={6}
+                p={2}
+                w={{ base: 10, md: 'full' }}
+              >
+                {item.icon}
+                <Box display={{ base: 'none', md: 'block' }}>{item.text}</Box>
+              </Link>
+            </Tooltip>
+          ))}
+        </Flex>
       </Flex>
     </Box>
   );
