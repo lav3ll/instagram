@@ -1,11 +1,19 @@
-import { Avatar, Box, Flex, Link } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
 import React from 'react';
-import AiFillHome from 'react-icons/ai';
-import {
-  CreatePostLogo,
-  InstagramLogo,
-  InstagramMobileLogo,
-  NotificationsLogo,
-  SearchLogo,
-} from '../../assets/constants';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { render, screen } from '@testing-library/react';
+import Sidebar from '../Components/Sidebar/Sidebar';
+import '@testing-library/jest-dom';
+
+describe('Sidebar Component', () => {
+  test('Renders Sidebar without crashing and contains expected content', () => {
+    render(
+      <Router>
+        <Sidebar />
+      </Router>
+    );
+
+    // Check if the sidebar is rendered
+    const sidebarElement = screen.getByTestId('sidebar-element');
+    expect(sidebarElement).toBeInTheDocument();
+  });
+});
