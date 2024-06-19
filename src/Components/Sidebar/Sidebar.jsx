@@ -36,6 +36,7 @@ const Sidebar = () => {
       link: '/lav3ll',
     },
   ];
+
   return (
     <Box
       height={'100vh'}
@@ -56,7 +57,7 @@ const Sidebar = () => {
           display={{ base: 'none', md: 'block' }}
           cursor={'pointer'}
         >
-          <InstagramLogo />
+          <InstagramLogo data-testid='instagram-logo' />
         </Link>
         <Link
           to={'/'}
@@ -67,6 +68,7 @@ const Sidebar = () => {
           borderRadius={6}
           _hover={{ bg: 'whiteAlpha.200' }}
           w={10}
+          data-testid='instagram-mobile-logo'
         >
           <InstagramMobileLogo />
         </Link>
@@ -74,7 +76,7 @@ const Sidebar = () => {
           {sidebarItems.map((item, idx) => (
             <Tooltip
               hasArrow
-              label={'item.text'}
+              label={item.text}
               placement={'right'}
               key={idx}
               ml={1}
@@ -120,7 +122,7 @@ const Sidebar = () => {
             justifyContent={{ base: 'center', md: 'flex-start' }}
             mt={'auto'}
           >
-            {<BiLogOut size={25} />}
+            <BiLogOut size={25} />
             <Box display={{ base: 'none', md: 'block' }}>Logout</Box>
           </Link>
         </Tooltip>
