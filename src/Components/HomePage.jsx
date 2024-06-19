@@ -4,15 +4,15 @@ import Feedposts from './FeedPosts/Feedposts';
 
 const HomePage = () => {
   return (
-    <Container maxW={'conteiner.lg'}>
+    <Container maxW={'container.lg'}>
       <Flex gap={20}>
         <Box
           flex={2}
           py={10}
-          test-dataid='data-feedposts'
+          data-testid='data-homepage'
           border={'1px solid blue'}
         >
-          <Feedposts />
+          <Feedposts data-testid='data-feedposts' />
         </Box>
         <Box
           flex={3}
@@ -20,7 +20,7 @@ const HomePage = () => {
           display={{ base: 'none', lg: 'block' }}
           maxW={'300px'}
           border={'1px solid red'}
-          test-dataid='data-suggested'
+          data-testid='data-suggested'
         >
           Suggested Users
         </Box>
