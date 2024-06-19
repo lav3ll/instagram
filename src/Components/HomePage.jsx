@@ -17,7 +17,7 @@ const HomePage = () => {
         <Box
           flex={3}
           mr={20}
-          dislay={{ base: 'none', lg: 'block' }}
+          display={{ base: 'none', lg: 'block' }}
           maxW={'300px'}
           border={'1px solid red'}
           test-dataid='data-suggested'
