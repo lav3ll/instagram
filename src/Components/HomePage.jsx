@@ -12,7 +12,7 @@ const HomePage = () => {
           data-testid='data-homepage'
           border={'1px solid blue'}
         >
-          <Feedposts data-testid='data-feedposts' />
+          <Feedposts />
         </Box>
         <Box
           flex={3}

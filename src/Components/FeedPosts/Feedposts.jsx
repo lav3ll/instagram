@@ -4,7 +4,12 @@ import FeedPost from './FeedPost';
 
 const Feedposts = () => {
   return (
-    <Container maxW={'container.sm'} py={10} px={2}>
+    <Container
+      maxW={'container.sm'}
+      py={10}
+      px={2}
+      data-testid='data-feedposts'
+    >
       <FeedPost />
       <FeedPost />
       <FeedPost />
