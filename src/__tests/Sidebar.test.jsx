@@ -73,5 +73,5 @@ describe('Sidebar Component', () => {
   //   const instagramMobileLogo = screen.getByTestId('instagram-mobile-logo');
   //   expect(instagramLogo).toBeInTheDocument();
   //   expect(instagramMobileLogo).not.toBeInTheDocument();
-  });
+  // });
 });
