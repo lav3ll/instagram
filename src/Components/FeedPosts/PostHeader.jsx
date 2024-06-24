@@ -8,9 +8,15 @@ const PostHeader = () => {
       alignItems={'center'}
       w={'full'}
       my={2}
+      data-testid='data-postheader'
     >
       <Flex alignItems={'center'} gap={2}>
-        <Avatar src='/img1.png' alt={'user profile pic'} size={'sm'} />
+        <Avatar
+          src='/img1.png'
+          alt='user profile pic'
+          size={'sm'}
+          aria-label='user profile pic'
+        />
         <Flex fontSize={'12px'} fontWeight={'bold'} gap={2}>
           lavell
         </Flex>
