@@ -10,10 +10,10 @@ const Feedposts = () => {
       px={2}
       data-testid='data-feedposts'
     >
-      <FeedPost username='lav3ll' avatar='/img1.png' />
-      <FeedPost username='norbert' avatar='/img2.png' />
-      <FeedPost username='lewis' avatar='/img3.png' />
-      <FeedPost username='cordell' avatar='/img4.png' />
+      <FeedPost username='lav3ll' avatar='/img1.png' img='/img1.png' />
+      <FeedPost username='norbert' avatar='/img2.png' img='/img2.png' />
+      <FeedPost username='lewis' avatar='/img3.png' img='/img3.png' />
+      <FeedPost username='cordell' avatar='/img4.png' img='/img4.png' />
     </Container>
   );
 };
