@@ -7,7 +7,12 @@ const FeedPost = () => {
   return (
     <>
       <PostHeader />
-      <Box data-testid='data-feedpost'>
+      <Box
+        data-testid='data-feedpost'
+        my={2}
+        borderRadius={4}
+        overflow={'hidden'}
+      >
         <Image src='/img1.png' alt='user profile pic' />
       </Box>
       <PostFooter />
