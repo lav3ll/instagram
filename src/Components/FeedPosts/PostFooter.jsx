@@ -1,6 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
-import { Flex, Box, Text } from '@chakra-ui/react';
+import {
+  Flex,
+  Box,
+  Text,
+  Input,
+  InputGroup,
+  InputRightElement,
+  Button,
+} from '@chakra-ui/react';
 import {
   CommentLogo,
   NotificationsLogo,
@@ -17,7 +25,7 @@ const PostFooter = () => {
       setLikes(likes - 1);
     } else {
       setLiked(true);
-      setLiked(likes + 1);
+      setLikes(likes + 1);
     }
   };
 
@@ -35,14 +43,41 @@ const PostFooter = () => {
         {likes} likes
       </Text>
       <Text fontSize='sm' fontWeight={700}>
-        lav3ll
+        lav3ll{/*Ussername */}
         <Text as={'span'} fontWeight={400}>
-          I look Good
+          I look Good{/*Description */}
         </Text>
       </Text>
       <Text fontSize='sm' color={'gray'}>
-        View all 1,000 comments
+        View all 1,000 comments {/*Number of comments*/}
       </Text>
+      <Flex
+        alignItems={'center'}
+        gap={2}
+        justifyContent={'space-between'}
+        w={'full'}
+      >
+        <InputGroup>
+          <Input
+            type='text'
+            variant={'flushed'}
+            placeContent={'add a comment...'}
+            fontSize={14}
+          />
+          <InputRightElement>
+            <Button
+              fontSize={14}
+              color={'blue.500'}
+              fontWeight={600}
+              cursor={'pointer'}
+              _hover={{ color: 'white' }}
+              bg={'transparent'}
+            >
+              Post
+            </Button>
+          </InputRightElement>
+        </InputGroup>
+      </Flex>
     </>
   );
 };
