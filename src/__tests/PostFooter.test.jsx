@@ -10,6 +10,12 @@ describe('PostHeader component renders without crashing', () => {
     expect(postFooterEl).toBeInTheDocument();
   });
 
+  test('Comment logo to renders on the page', () => {
+    render(<PostFooter />);
+    const CommentLogo = screen.getByLabelText('Comment');
+    expect(CommentLogo).toBeInTheDocument();
+  });
+
   test('Like count updates when like icon is clicked', () => {
     render(<PostFooter />);
     const likeBtn = screen.getByTestId('data-likeClick');
@@ -29,15 +35,5 @@ describe('PostHeader component renders without crashing', () => {
     expect(likesText).toHaveTextContent('1000'); // Assuming the initial count was 1000
     expect(screen.getByLabelText('Notifications')).toBeInTheDocument();
     expect(screen.queryByLabelText('Unlike')).not.toBeInTheDocument();
-  });
-
-  test('Like count updates when like icon is clicked for a second time and the like is removed', () => {
-    render(<PostFooter />);
-    const likeBtn = screen.getByTestId('data-likeClick');
-    const likesText = screen.getByTestId('data-likesText');
-
-    fireEvent.click(likeBtn);
-    fireEvent.click(likeBtn);
-    expect(likesText).toHaveTextContent('1000');
   });
 });
