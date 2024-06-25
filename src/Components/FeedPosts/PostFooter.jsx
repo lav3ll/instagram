@@ -30,7 +30,7 @@ const PostFooter = ({ username }) => {
   };
 
   return (
-    <Box mb={10}>
+    <Box mb={10} data-testid={'data-postfooter'}>
       <Flex alignItems={'center'} gap={4} w={'full'} pt={0} mb={'2'} mt={4}>
         <Box onClick={handleClick} cursor={'pointer'} fontSize={18}>
           {!liked ? <NotificationsLogo /> : <UnlikeLogo />}

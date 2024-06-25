@@ -25,7 +25,7 @@ const Feedposts = () => {
       px={2}
       data-testid='data-feedposts'
     >
-      {true &&
+      {isLoading &&
         [0, 1, 2, 3].map((_, idx) => (
           <VStack key={idx} gap={4} alignItems={'flex-start'} mb={10}>
             <Flex gap={2}>
@@ -40,7 +40,7 @@ const Feedposts = () => {
             </Skeleton>
           </VStack>
         ))}
-      {!false && (
+      {!isLoading && (
         <>
           <FeedPost username='lav3ll' avatar='/img1.png' img='/img1.png' />
           <FeedPost username='norbert' avatar='/img2.png' img='/img2.png' />
