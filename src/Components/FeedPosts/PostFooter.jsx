@@ -32,14 +32,19 @@ const PostFooter = ({ username }) => {
   return (
     <Box mb={10} data-testid={'data-postfooter'}>
       <Flex alignItems={'center'} gap={4} w={'full'} pt={0} mb={'2'} mt={4}>
-        <Box onClick={handleClick} cursor={'pointer'} fontSize={18}>
+        <Box
+          onClick={handleClick}
+          cursor={'pointer'}
+          fontSize={18}
+          data-testid={'data-likeClick'}
+        >
           {!liked ? <NotificationsLogo /> : <UnlikeLogo />}
         </Box>
         <Box cursor={'pointer'} fontSize={18}>
           <CommentLogo />
         </Box>
       </Flex>
-      <Text fontWeight={600} fontSize={'sm'}>
+      <Text fontWeight={600} fontSize={'sm'} data-testid={'data-likesText'}>
         {likes} likes
       </Text>
       <Text fontSize='sm' fontWeight={700}>
