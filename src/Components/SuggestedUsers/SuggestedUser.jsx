@@ -1,13 +1,16 @@
 import React from 'react';
 import { Avatar, Box, Button, Flex, VStack } from '@chakra-ui/react';
+import { useState } from 'react';
 
 const SuggestedUser = ({ followers, avatar, name }) => {
+  const [isFollowed, setIsFollowed] = useState(false);
+
   return (
-    <Flex justifyContent={'center'} alignItems={'center'} w={'full'}>
+    <Flex justifyContent={'space-between'} alignItems={'center'} w={'full'}>
       <Flex alignItems={'center'} gap={2}>
-        <Avatar src={avatar} name={name} size={'md'}></Avatar>
-        <VStack spacing={2}>
-          <Box fontSize={12} fontWeight={'bold'}>
+        <Avatar src={avatar} name={name} size={'md'} />
+        <VStack spacing={2} align='flex-start'>
+          <Box fontSize={12} fontWeight={'bold'} maxW='150px' isTruncated>
             {name}
           </Box>
           <Box fontSize={11} fontWeight={'gray.500'}>
@@ -15,7 +18,19 @@ const SuggestedUser = ({ followers, avatar, name }) => {
           </Box>
         </VStack>
       </Flex>
-      <Button></Button>
+      <Button
+        fontSize={13}
+        bg={'transparent'}
+        p={0}
+        h={'max-content'}
+        fontWeight={'medium'}
+        color={'blue.400'}
+        cursor={'pointer'}
+        _hover={{ color: 'white' }}
+        onClick={() => setIsFollowed(!isFollowed)}
+      >
+        {isFollowed ? 'Unfollow' : 'Follow'}
+      </Button>
     </Flex>
   );
 };
