@@ -6,7 +6,12 @@ const SuggestedUser = ({ followers, avatar, name }) => {
   const [isFollowed, setIsFollowed] = useState(false);
 
   return (
-    <Flex justifyContent={'space-between'} alignItems={'center'} w={'full'}>
+    <Flex
+      justifyContent={'space-between'}
+      alignItems={'center'}
+      w={'full'}
+      data-testid={'test-suggestedUser'}
+    >
       <Flex alignItems={'center'} gap={2}>
         <Avatar src={avatar} name={name} size={'md'} />
         <VStack spacing={2} align='flex-start'>
@@ -28,6 +33,7 @@ const SuggestedUser = ({ followers, avatar, name }) => {
         cursor={'pointer'}
         _hover={{ color: 'white' }}
         onClick={() => setIsFollowed(!isFollowed)}
+        data-testid={'suggestedUser-btn'}
       >
         {isFollowed ? 'Unfollow' : 'Follow'}
       </Button>
