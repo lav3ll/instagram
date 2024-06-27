@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, Flex } from '@chakra-ui/react';
-import ProfileHeader from './ProfileHeader';
-import ProfileTabs from './ProfileTabs';
+import ProfileHeader from '../Profile/ProfileHeader';
+import ProfileTabs from '../Profile/ProfileTabs';
+import ProfilePosts from '../Profile/ProfilePosts';
 
 const ProfilePage = () => {
   return (
@@ -16,7 +17,14 @@ const ProfilePage = () => {
       >
         <ProfileHeader />
       </Flex>
-      <Flex>
+      <Flex
+        px={{ base: 2, sm: 4 }}
+        maxW={'full'}
+        mx={'auto'}
+        borderTop={'1px solid'}
+        borderColor={'whiteAlpha.500'}
+        direction={'column'}
+      >
         <ProfileTabs />
         <ProfilePosts />
       </Flex>
