@@ -44,7 +44,26 @@ const ProfileHeader = () => {
             </Button>
           </Flex>
         </Flex>
-        <Flex></Flex>
+        <Flex alignItems={'center'} gap={{ base: 2, sm: 4 }}>
+          <Text>
+            <Text as={'span'} fontWeight={'bold'} mr={1}>
+              4
+            </Text>
+            Posts
+          </Text>
+          <Text>
+            <Text as={'span'} fontWeight={'bold'} mr={1}>
+              1000
+            </Text>
+            Followers
+          </Text>
+          <Text>
+            <Text as={'span'} fontWeight={'bold'} mr={1}>
+              820
+            </Text>
+            Following
+          </Text>
+        </Flex>
       </VStack>
     </Flex>
   );
