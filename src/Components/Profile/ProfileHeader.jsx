@@ -1,5 +1,12 @@
 import React from 'react';
-import { Flex, Avatar, AvatarGroup, VStack, Text } from '@chakra-ui/react';
+import {
+  Flex,
+  Avatar,
+  AvatarGroup,
+  VStack,
+  Text,
+  Button,
+} from '@chakra-ui/react';
 
 const ProfileHeader = () => {
   return (
@@ -26,7 +33,18 @@ const ProfileHeader = () => {
           w={'full'}
         >
           <Text fontSize={{ base: 'sm', md: 'lg' }}>lav3ll</Text>
+          <Flex gap={4} alignItems={'center'} m justifyContent={'center'}>
+            <Button
+              bg={'white'}
+              color={'black'}
+              _hover={{ bg: 'whiteAlpha.800' }}
+              size={{ base: 'xs', md: 'sm' }}
+            >
+              Edit Profile
+            </Button>
+          </Flex>
         </Flex>
+        <Flex></Flex>
       </VStack>
     </Flex>
   );
