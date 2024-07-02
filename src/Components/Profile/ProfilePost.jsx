@@ -10,9 +10,9 @@ const ProfilePost = ({ img }) => {
       borderRadius={4}
       overflow={'hidden'}
       border={'1px solid'}
-      borderColor={'whiteAlpha.500'}
+      borderColor={'whiteAlpha.300'}
       position={'relative'}
-      AspectRatio={1 / 1}
+      aspectRatio={1 / 1}
     >
       <Flex
         opacity={0}
@@ -23,8 +23,8 @@ const ProfilePost = ({ img }) => {
         right={0}
         bottom={0}
         bg={'blackAlpha.700'}
-        transition={'all 0.3 ease'}
-        zIndex={-1}
+        transition={'all 0.3s ease'}
+        zIndex={1}
         justifyContent={'center'}
       >
         <Flex alignItems={'center'} justifyContent={'center'} gap={50}>
@@ -34,11 +34,16 @@ const ProfilePost = ({ img }) => {
               7
             </Text>
           </Flex>
+
           <Flex>
-            <FaComment />
+            <FaComment size={20} />
+            <Text fontWeight={'bold'} ml={2}>
+              10
+            </Text>
           </Flex>
         </Flex>
       </Flex>
+
       <Image
         src={img}
         alt='profile post'
