@@ -9,4 +9,14 @@ describe('Profiel tabs render without any crashes', () => {
     const profileTabsEl = screen.getByTestId('test-profiletabs');
     expect(profileTabsEl).toBeInTheDocument();
   });
+
+  test('renders all icons', () => {
+    render(<ProfileTabs />);
+    const postsIcon = screen.getByTestId('test-logoGrid');
+    const savedIcon = screen.getByTestId('test-logoBookmark');
+    const likesIcon = screen.getByTestId('test-logoHeart');
+    expect(postsIcon).toBeInTheDocument();
+    expect(savedIcon).toBeInTheDocument();
+    expect(likesIcon).toBeInTheDocument();
+  });
 });

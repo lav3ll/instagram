@@ -20,7 +20,7 @@ const ProfileTabs = () => {
         cursor={'pointer'}
       >
         <Box fontSize={20}>
-          <BsGrid3X3 />
+          <BsGrid3X3 data-testid={'test-logoGrid'} />
         </Box>
         <Text fontSize={12} display={{ base: 'none', sm: 'block' }}>
           Posts
@@ -29,7 +29,7 @@ const ProfileTabs = () => {
 
       <Flex alignItems={'center'} p={3} gap={1} cursor={'pointer'}>
         <Box fontSize={20}>
-          <BsBookmark />
+          <BsBookmark data-testid={'test-logoBookmark'} />
         </Box>
         <Text fontSize={12} display={{ base: 'none', sm: 'block' }}>
           SAVED
@@ -37,7 +37,7 @@ const ProfileTabs = () => {
       </Flex>
       <Flex alignItems={'center'} p={3} gap={1} cursor={'pointer'}>
         <Box fontSize={20}>
-          <BsSuitHeart fontWeight={'bold'} />
+          <BsSuitHeart fontWeight={'bold'} data-testid={'test-logoHeart'} />
         </Box>
         <Text fontSize={12} display={{ base: 'none', sm: 'block' }}>
           LIKES
