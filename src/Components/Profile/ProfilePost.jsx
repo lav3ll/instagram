@@ -11,6 +11,7 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
+  Box,
 } from '@chakra-ui/react';
 import React from 'react';
 import { AiFillHeart } from 'react-icons/ai';
@@ -79,7 +80,20 @@ const ProfilePost = ({ img }) => {
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody bg={'black'} pb={5}>
-            Hey this is a modal
+            <Flex
+              gap={4}
+              w={{ base: '90%', sm: '70%', md: 'full' }}
+              mx={'auto'}
+            >
+              <Box
+                borderRadius={4}
+                overflow={'hidden'}
+                border={'1px solid whiteAlpha.300'}
+                flex={1.5}
+              >
+                <Image src={img} alt={'profile post'} />
+              </Box>
+            </Flex>
           </ModalBody>
         </ModalContent>
       </Modal>
