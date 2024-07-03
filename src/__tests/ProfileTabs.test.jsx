@@ -29,4 +29,14 @@ describe('Profiel tabs render without any crashes', () => {
     expect(savedText).toBeInTheDocument();
     expect(likesText).toBeInTheDocument();
   });
+
+  test('text labels are shown on larger screens', () => {
+    render(<ProfileTabs />);
+    const postsText = screen.getByText(/posts/i);
+    const savedText = screen.getByText(/saved/i);
+    const likesText = screen.getByText(/likes/i);
+    expect(postsText).toHaveStyle('display: block');
+    expect(savedText).toHaveStyle('display: block');
+    expect(likesText).toHaveStyle('display: block');
+  });
 });
