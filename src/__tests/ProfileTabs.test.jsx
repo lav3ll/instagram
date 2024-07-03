@@ -19,4 +19,14 @@ describe('Profiel tabs render without any crashes', () => {
     expect(savedIcon).toBeInTheDocument();
     expect(likesIcon).toBeInTheDocument();
   });
+
+  test('renders all text labels', () => {
+    render(<ProfileTabs />);
+    const postsText = screen.getByText(/posts/i);
+    const savedText = screen.getByText(/saved/i);
+    const likesText = screen.getByText(/likes/i);
+    expect(postsText).toBeInTheDocument();
+    expect(savedText).toBeInTheDocument();
+    expect(likesText).toBeInTheDocument();
+  });
 });
