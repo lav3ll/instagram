@@ -72,7 +72,7 @@ const ProfilePost = ({ img }) => {
         />
       </GridItem>
       <Modal
-        isOpen={onOpen}
+        isOpen={isOpen}
         onClose={onClose}
         isCentered={true}
         size={{ base: '3xl', md: '5xl' }}
@@ -108,14 +108,17 @@ const ProfilePost = ({ img }) => {
                   </Text>
                 </Flex>
               </Flex>
-              <Box>
+              <Box
+                _hover={{ bg: 'whiteAlpha.300', color: 'red.600' }}
+                borderRadius={4}
+                p={1}
+              >
                 <MdDelete size={20} cursor={'pointer'} />
               </Box>
             </Flex>
           </ModalBody>
         </ModalContent>
       </Modal>
-      ;
     </>
   );
 };
