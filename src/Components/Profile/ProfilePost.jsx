@@ -79,7 +79,6 @@ const ProfilePost = ({ img }) => {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody bg={'black'} pb={5}>
             <Flex
@@ -102,19 +101,25 @@ const ProfilePost = ({ img }) => {
                 display={{ base: 'none', md: 'flex' }}
               >
                 <Flex alignItems={'center'} justifyContent={'space-between'}>
-                  <Avatar src={'/profilepic.png'} size={'sm'} name={'lavell'} />
-                  <Text fontWeight={'bold'} fontSize={12}>
-                    Lav3ll
-                  </Text>
+                  <Flex alignItems={'center'} gap={4}>
+                    <Avatar
+                      src={'/profilepic.png'}
+                      size={'sm'}
+                      name={'lavell'}
+                    />
+                    <Text fontWeight={'bold'} fontSize={12}>
+                      Lav3ll
+                    </Text>
+                  </Flex>
+                  <Box
+                    _hover={{ bg: 'whiteAlpha.300', color: 'red.600' }}
+                    borderRadius={4}
+                    p={1}
+                  >
+                    <MdDelete size={20} cursor={'pointer'} />
+                  </Box>
                 </Flex>
               </Flex>
-              <Box
-                _hover={{ bg: 'whiteAlpha.300', color: 'red.600' }}
-                borderRadius={4}
-                p={1}
-              >
-                <MdDelete size={20} cursor={'pointer'} />
-              </Box>
             </Flex>
           </ModalBody>
         </ModalContent>
