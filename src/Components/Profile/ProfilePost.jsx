@@ -13,8 +13,11 @@ import {
   ModalBody,
   Box,
   Avatar,
+  Divider,
+  VStack,
 } from '@chakra-ui/react';
 import React from 'react';
+import Comment from '../Comment/Comment';
 import { AiFillHeart } from 'react-icons/ai';
 import { FaComment } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
@@ -119,6 +122,32 @@ const ProfilePost = ({ img }) => {
                     <MdDelete size={20} cursor={'pointer'} />
                   </Box>
                 </Flex>
+                <Divider my={4} bg={'gray.500'} />
+                <VStack
+                  w='full'
+                  alignItems={'start'}
+                  maxH={'350px'}
+                  overflowY={'auto'}
+                >
+                  <Comment
+                    createdAt={'1 hour ago'}
+                    username={'lav3ll'}
+                    profilepic='/profilepic.png'
+                    text={'nice clone dude'}
+                  />
+                  <Comment
+                    createdAt={'7 day ago'}
+                    username={'kent'}
+                    profilepic='https://bit/ly/kent-c-dodds'
+                    text={'nice clone dude'}
+                  />
+                  <Comment
+                    createdAt={'12 days ago'}
+                    username={'abramov'}
+                    profilepic='https://bit/ly/dan-abramov'
+                    text={'nice clone dude'}
+                  />
+                </VStack>
               </Flex>
             </Flex>
           </ModalBody>
