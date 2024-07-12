@@ -6,7 +6,7 @@ import ProfilePosts from '../Profile/ProfilePosts';
 
 const ProfilePage = () => {
   return (
-    <Container maxW={'container-lg'} py={5}>
+    <Container maxW={'container-lg'} py={5} data-testid={'test-profileheader'}>
       <Flex
         py={10}
         px={4}
@@ -25,7 +25,7 @@ const ProfilePage = () => {
         borderColor={'whiteAlpha.500'}
         direction={'column'}
       >
-        <ProfileTabs />
+        <ProfileTabs data-testid={'test-profiletabs'} />
         <ProfilePosts />
       </Flex>
     </Container>
