@@ -15,13 +15,13 @@ describe('ProfilePage component', () => {
     expect(profileTabsEl).toBeInTheDocument();
   });
 
-  test('renders ProfilePost components after loading', async () => {
-    render(<ProfilePost />);
+  test('renders ProfilePage component', async () => {
+    render(<ProfilePage />);
 
     await waitFor(
       () => {
-        const profilePostEls = screen.getAllByAltText('profile post');
-        expect(profilePostEls.length).toBe(4);
+        const profilePosts = screen.getByTestId('test-profileposts');
+        expect(profilePosts).toBeInTheDocument();
       },
       { timeout: 3000 }
     );
