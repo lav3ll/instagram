@@ -30,7 +30,7 @@ const PostFooter = ({ username }) => {
   };
 
   return (
-    <Box mb={10} data-testid={'data-postfooter'}>
+    <Box mb={10} marginTop={'auto'} data-testid={'data-postfooter'}>
       <Flex alignItems={'center'} gap={4} w={'full'} pt={0} mb={'2'} mt={4}>
         <Box
           onClick={handleClick}

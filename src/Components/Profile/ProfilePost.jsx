@@ -21,6 +21,7 @@ import Comment from '../Comment/Comment';
 import { AiFillHeart } from 'react-icons/ai';
 import { FaComment } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
+import PostFooter from '../FeedPosts/PostFooter';
 
 const ProfilePost = ({ img }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -148,6 +149,8 @@ const ProfilePost = ({ img }) => {
                     text={'nice clone dude'}
                   />
                 </VStack>
+                <Divider my={4} bg={'gray.800'} />
+                <PostFooter />
               </Flex>
             </Flex>
           </ModalBody>
