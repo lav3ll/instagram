@@ -132,19 +132,19 @@ const ProfilePost = ({ img }) => {
                   <Comment
                     createdAt={'1 hour ago'}
                     username={'lav3ll'}
-                    profilepic='/profilepic.png'
+                    profilepic='https://bit.ly/code-beast'
                     text={'nice clone dude'}
                   />
                   <Comment
                     createdAt={'7 day ago'}
                     username={'kent'}
-                    profilepic='https://bit/ly/kent-c-dodds'
+                    profilepic='https://bit.ly/ryan-florence'
                     text={'nice clone dude'}
                   />
                   <Comment
                     createdAt={'12 days ago'}
                     username={'abramov'}
-                    profilepic='https://bit/ly/dan-abramov'
+                    profilepic='https://bit.ly/dan-abramov'
                     text={'nice clone dude'}
                   />
                 </VStack>
