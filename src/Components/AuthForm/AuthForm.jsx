@@ -13,21 +13,12 @@ import { useNavigate } from 'react-router-dom';
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
-  const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     email: '',
     password: '',
     confirmPassword: '',
   });
 
-  const handleAuth = () => {
-    if (!inputs.email || !inputs.password) {
-      alert('You have not filled out all of the fields!');
-      return;
-    }
-
-    navigate('/');
-  };
   return (
     <div data-testid='auth-form'>
       <Box border={'1px solid'} borderRadius={'4'} padding={5}>
@@ -54,7 +45,6 @@ const AuthForm = () => {
             colorScheme={'blue'}
             size={'sm'}
             fontSize={14}
-            onClick={handleAuth}
             data-testid='auth-form-btn'
           >
             {isLogin ? 'login' : 'Sign Up'}
