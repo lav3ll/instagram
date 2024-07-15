@@ -24,22 +24,7 @@ const AuthForm = () => {
       <Box border={'1px solid'} borderRadius={'4'} padding={5}>
         <VStack spacing={4}>
           <Image src='/logo.png' h={24} cursor='pointer' alt='instagram' />
-          <Input
-            placeholder='Email'
-            fontSize={14}
-            type='email'
-            value={inputs.email}
-            onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
-            data-testid='auth-form-email'
-          />
-          <Input
-            placeholder='Password'
-            onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
-            fontSize={14}
-            type='password'
-            value={inputs.password}
-            data-testid='auth-form-password'
-          />
+
           <Button
             w={'full'}
             colorScheme={'blue'}
