@@ -36,6 +36,7 @@ const ProfilePost = ({ img }) => {
         position={'relative'}
         aspectRatio={1 / 1}
         onClick={onOpen}
+        data-testid={'data-profilePost'}
       >
         <Flex
           opacity={0}
